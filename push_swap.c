@@ -8,48 +8,30 @@
 /*   Created: 2024/03/18 11:50:55 by rmarcano          #+#    #+#             */
 /*   Updated: 2024/03/18 11:50:57 by rmarcano         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/* ****************************************************** ******************** */
 
-#include "push_swap.h"
+#include "include/push_swap.h"
 
-int	*get_numbers(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	int count;
-	int *numbers;
-	int i;
+    if (argc < 2)
+        ft_error(2);
+	check_only_numbers(argc, argv);
 
-	count = argc - 1;
-	numbers = malloc(count * sizeof(int));
-	if (numbers == NULL) 
-	{
-		printf("Memory allocation failed\n");
-		exit(1);
-	}
-	i = 1;
-	while (i <= count)
-	{
-		numbers[i] = ft_atoi(argv[i]);
-		i++;
-	}
-	return(numbers);
+
+
+    // printf("%s\n", numbers[0]);
+    // printf("%s\n", numbers[1]);
+    // printf("%s\n", numbers[2]);
+    // printf("%s\n", numbers[3]);
+
+    
+    // for (int i = 0; numbers[i] != NULL; i++)
+    // {
+    //     free(numbers[i]);
+    // }
+    // free(numbers);
+
+    return 0;
 }
 
-int	ft_error()
-{
-	printf("ERROR: Must have a least 2 values to arrange\n");
-	exit(1);
-}
-
-int main (int argc, char **argv)
-{
-	int *numbers;
-	if (argc < 2)
-		ft_error();
-	if (argc == 2)
-	{
-		ft_split();
-	}
-	numbers = get_numbers(argc, argv);
-	printf("%d", numbers[1]);
-	return(0);
-}

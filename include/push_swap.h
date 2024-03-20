@@ -2,10 +2,12 @@
 # define PUSH_SWAP_H
 # include <stdio.h>
 # include <stdlib.h>
-// # include "libft/libft.h"
+# include "../libft/libft.h"
 
 
-int	ft_atoi(const char *str);
+void ft_error(int error);
+void check_only_numbers(int argc, char **argv);
+int	ft_isspace(int c);
 
 
 #endif

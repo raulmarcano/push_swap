@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = 
+SRC = push_swap.c src/utils.c
 
 OBJS = $(SRC:.c=.o)
 
