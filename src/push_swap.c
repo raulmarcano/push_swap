@@ -10,20 +10,29 @@
 /*                                                                            */
 /* ****************************************************** ******************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int main(int argc, char **argv)
 {
+    char **array;
+
     if (argc < 2)
         ft_error(2);
-	check_only_numbers(argc, argv);
+	ft_check_numbers(argc, argv);
+    if (argc == 2)
+        array = ft_split(argv[1], ' ');
+      else
+        array = &argv[1];
+        
 
 
 
-    // printf("%s\n", numbers[0]);
-    // printf("%s\n", numbers[1]);
-    // printf("%s\n", numbers[2]);
-    // printf("%s\n", numbers[3]);
+    printf("%s\n", array[0]);
+    printf("%s\n", array[1]);
+    printf("%s\n", array[2]);
+    printf("%s\n", array[3]);
+    printf("%d\n", ft_many_numbers(array));
+
 
     
     // for (int i = 0; numbers[i] != NULL; i++)
@@ -31,7 +40,7 @@ int main(int argc, char **argv)
     //     free(numbers[i]);
     // }
     // free(numbers);
-
+    system("leaks -q push_swap");
     return 0;
 }
 
