@@ -33,12 +33,12 @@ void	ft_add_to_stack(char *str, t_list **stack_a)
 	{
 		num = malloc(sizeof(int));
 		if (!num)
-			ft_free_splited(splited[j], j);
+			ft_free_splited(&splited[j], j);
 		*num = ft_atoi(splited[j]);
 		node = ft_lstnew(num);
 		if (!node)
 		{
-			ft_free_splited(splited);
+			ft_free_splited(splited, j);
 			free(num);
 		}
 		ft_lstadd_back(stack_a, node);
