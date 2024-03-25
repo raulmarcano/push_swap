@@ -20,5 +20,6 @@ void	ft_error(int error)
 		printf("ERROR: No hay datos\n");
 	if (error == 3)
 		printf("ERROR: Datos duplicados\n");
+	system("leaks -q push_swap");
 	exit(1);
 }

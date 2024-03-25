@@ -50,7 +50,7 @@ int main(int argc, char **argv)
         stack_a = ft_create_stack(argv, argc, &stack_a);
     else
         return(0);
-    
+    ft_check_duplicates(stack_a);
     ft_lstiter(stack_a, ft_putnbr_copy);
     
     ft_lstclear(&stack_a, free);

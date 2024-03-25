@@ -36,3 +36,29 @@ void	ft_check_numbers(int argc, char **argv)
 		i++;
 	}
 }
+
+void	ft_check_duplicates(t_list *stack_a)
+{
+	t_list	*current;
+	t_list	*compare;
+	int		current_value;
+	int		compare_value;
+
+	current = stack_a;
+	while (current != NULL && current->next != NULL)
+	{
+		compare = current->next;
+		current_value = *((int *)current->content);
+		while (compare != NULL)
+		{
+			compare_value = *((int *)compare->content);
+			if (current_value == compare_value)
+			{
+				ft_lstclear(&stack_a, free);
+				ft_error(3);
+			}
+			compare = compare->next;
+		}
+		current = current->next;
+	}
+}
