@@ -12,13 +12,10 @@
 
 #include "../include/push_swap.h"
 
-void	ft_free_splited(char **splited)
+void	ft_free_splited(char **splited, int j)
 {
-	int	j;
-
-	j = 0;
-	while (splited[j])
-		free(splited[j++]);
+	while (j >= 0)
+		free(splited[j--]);
 	free(splited);
 	ft_error(1);
 }
@@ -36,7 +33,7 @@ void	ft_add_to_stack(char *str, t_list **stack_a)
 	{
 		num = malloc(sizeof(int));
 		if (!num)
-			ft_free_splited(splited);
+			ft_free_splited(splited[j], j);
 		*num = ft_atoi(splited[j]);
 		node = ft_lstnew(num);
 		if (!node)
