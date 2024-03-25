@@ -35,6 +35,7 @@ void	ft_add_to_stack(char *str, t_list **stack_a)
 		if (!num)
 			ft_free_splited(&splited[j], j);
 		*num = ft_atoi(splited[j]);
+		ft_compare_to_overflow(splited[j], num);
 		node = ft_lstnew(num);
 		if (!node)
 		{
@@ -55,4 +56,20 @@ t_list	*ft_create_stack(char **argv, int count, t_list **stack_a)
 	while (i < count)
 		ft_add_to_stack(argv[i++], stack_a);
 	return (*stack_a);
+}
+
+void ft_compare_to_overflow(char *splitted, int *num)
+{
+	char *str;
+	printf("%d\n", *num);
+	str = ft_itoa(*num);
+	printf("post-itoa: %s\n", str);
+	if (ft_strncmp(splitted, str, ft_strlen(splitted)))
+		ft_error(4);
+	free(str);
+}
+
+char *zero_handling(splitted)
+{
+	
 }

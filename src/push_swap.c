@@ -36,6 +36,7 @@ void	ft_putnbr_copy(void *integer)
     }
 	digit = '0' + (n % 10);
 	write(1, &digit, 1);
+	write(1, "\n", 1);
 	return ;
 }
 
