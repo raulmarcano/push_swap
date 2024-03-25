@@ -12,34 +12,48 @@
 
 #include "../include/push_swap.h"
 
+void	ft_putnbr_copy(void *integer)
+{
+	char	digit;
+    int n;
+    int tmp;
+
+    n = *(int *)integer;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = n * -1;
+	}
+	if (n > 9)
+    {
+        tmp = n / 10;
+		ft_putnbr_copy(&tmp);
+    }
+	digit = '0' + (n % 10);
+	write(1, &digit, 1);
+	return ;
+}
+
 int main(int argc, char **argv)
 {
-    char **array;
+    t_list  *stack_a;
 
-    if (argc < 2)
-        ft_error(2);
+    stack_a = NULL;
+
 	ft_check_numbers(argc, argv);
-    if (argc == 2)
-        array = ft_split(argv[1], ' ');
-      else
-        array = &argv[1];
-        
-
-
-
-    printf("%s\n", array[0]);
-    printf("%s\n", array[1]);
-    printf("%s\n", array[2]);
-    printf("%s\n", array[3]);
-    printf("%d\n", ft_many_numbers(array));
-
-
+    if (argc >= 2)
+        stack_a = ft_create_stack(argv, argc, &stack_a);
+    else
+        return(0);
     
-    // for (int i = 0; numbers[i] != NULL; i++)
-    // {
-    //     free(numbers[i]);
-    // }
-    // free(numbers);
+    ft_lstiter(stack_a, ft_putnbr_copy);
+    
+    ft_lstclear(&stack_a, free);
     system("leaks -q push_swap");
     return 0;
 }

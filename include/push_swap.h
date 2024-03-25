@@ -19,5 +19,9 @@
 void	ft_check_numbers(int argc, char **argv);
 int		ft_many_numbers(char **array);
 void	ft_error(int error);
+void 	ft_add_to_stack(char *str, t_list **stack_a);
+void 	ft_free_splited(char **splited);
+t_list 	*ft_create_stack(char **argv, int count, t_list **stack_a);
+
 
 #endif
