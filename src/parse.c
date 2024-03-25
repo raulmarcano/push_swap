@@ -36,4 +36,3 @@ void	ft_check_numbers(int argc, char **argv)
 		i++;
 	}
 }
-
