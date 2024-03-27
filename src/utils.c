@@ -15,12 +15,12 @@
 void	ft_error(int error)
 {
 	if (error == 1)
-		printf("ERROR: Datos erroneos o no numéricos\n");
+		ft_printf("ERROR: Datos erroneos o no numéricos\n");
 	if (error == 2)
-		printf("ERROR: No hay datos\n");
+		ft_printf("ERROR: No hay datos\n");
 	if (error == 3)
-		printf("ERROR: Datos duplicados\n");
+		ft_printf("ERROR: Datos duplicados\n");
 	if (error == 4)
-		printf("ERROR: Overflow\n");
+		ft_printf("ERROR: Overflow\n");
 	exit(1);
 }
