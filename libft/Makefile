@@ -14,6 +14,10 @@ BNS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bo
 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c \
 ft_lstiter_bonus.c ft_lstmap_bonus.c \
 
+SRC_PRINTF = printf/ft_printf.c printf/letters.c printf/numbers.c
+
+O_PRINTF = $(SRC_PRINTF:.c=.o)
+
 O_BNS = $(BNS:.c=.o)
 
 OBJS = $(SRC:.c=.o)
@@ -25,11 +29,11 @@ all: $(NAME)
 $(NAME): $(OBJS) 
 	@ar -rcs $(NAME) $(OBJS)
 
-bonus: $(O_BNS) $(OBJS)
-	@ar -rcs $(NAME) $(O_BNS) $(OBJS)
+bonus: $(O_BNS) $(OBJS) $(O_PRINTF)
+	@ar -rcs $(NAME) $(O_BNS) $(OBJS) $(O_PRINTF)
 
 clean:
-	@$(RM) $(OBJS) $(O_BNS)
+	@$(RM) $(OBJS) $(O_BNS) $(O_PRINTF)
 
 fclean: clean
 	@$(RM) $(NAME) 

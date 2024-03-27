@@ -19,6 +19,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include <string.h>
+# include "./printf/ft_printf.h"
 
 	//List structure
 typedef struct s_list
