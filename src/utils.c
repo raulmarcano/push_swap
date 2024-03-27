@@ -22,6 +22,5 @@ void	ft_error(int error)
 		printf("ERROR: Datos duplicados\n");
 	if (error == 4)
 		printf("ERROR: Overflow\n");
-	system("leaks -q push_swap");
 	exit(1);
 }

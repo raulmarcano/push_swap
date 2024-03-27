@@ -19,10 +19,10 @@ void	ft_compare_to_overflow(char *splited, int *num)
 	splited = zero_handling(splited);
 	str = ft_itoa(*num);
 	if (ft_strncmp(splited, str, ft_strlen(splited)))
-		{
-			free(str);
-			ft_error(4);
-		}
+	{
+		free(str);
+		ft_error(4);
+	}
 	free(str);
 }
 
@@ -82,6 +82,23 @@ char	*handle_negative(char *cadena)
 
 char	*zero_handling(char *cadena)
 {
+	int	i;
+
+	i = 0;
+	if (cadena[i] == '-')
+		i++;
+	while (cadena[i] != '\0')
+	{
+		if (cadena[i] == '0')
+			i++;
+		else
+			break ;
+	}
+	if (cadena[i] == '\0')
+	{
+		cadena = "0";
+		return (cadena);
+	}
 	remove_zeros(cadena);
 	handle_negative(cadena);
 	return (cadena);

@@ -23,6 +23,7 @@ void	ft_add_to_stack(char *str, t_list **stack_a);
 void	ft_free_splited(char **splited, int j);
 t_list	*ft_create_stack(char **argv, int count, t_list **stack_a);
 void	ft_check_duplicates(t_list *head);
-void ft_compare_to_overflow(char *splitted, int *num);
+void	ft_compare_to_overflow(char *splitted, int *num);
+char	*zero_handling(char *cadena);
 
 #endif

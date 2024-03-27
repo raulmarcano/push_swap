@@ -57,19 +57,3 @@ t_list	*ft_create_stack(char **argv, int count, t_list **stack_a)
 		ft_add_to_stack(argv[i++], stack_a);
 	return (*stack_a);
 }
-
-void ft_compare_to_overflow(char *splitted, int *num)
-{
-	char *str;
-	printf("%d\n", *num);
-	str = ft_itoa(*num);
-	printf("post-itoa: %s\n", str);
-	if (ft_strncmp(splitted, str, ft_strlen(splitted)))
-		ft_error(4);
-	free(str);
-}
-
-char *zero_handling(splitted)
-{
-	
-}

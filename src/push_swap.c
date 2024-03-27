@@ -5,57 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmarcano <rmarcano@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 11:50:55 by rmarcano          #+#    #+#             */
-/*   Updated: 2024/03/18 11:50:57 by rmarcano         ###   ########.fr       */
+/*   Created: 2024/03/27 16:13:48 by rmarcano          #+#    #+#             */
+/*   Updated: 2024/03/27 16:13:51 by rmarcano         ###   ########.fr       */
 /*                                                                            */
-/* ****************************************************** ******************** */
+/* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_putnbr_copy(void *integer)
+int	main(int argc, char **argv)
 {
-	char	digit;
-    int n;
-    int tmp;
+	t_list	*stack_a;
 
-    n = *(int *)integer;
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n < 0)
-	{
-		write(1, "-", 1);
-		n = n * -1;
-	}
-	if (n > 9)
-    {
-        tmp = n / 10;
-		ft_putnbr_copy(&tmp);
-    }
-	digit = '0' + (n % 10);
-	write(1, &digit, 1);
-	write(1, "\n", 1);
-	return ;
-}
-
-int main(int argc, char **argv)
-{
-    t_list  *stack_a;
-
-    stack_a = NULL;
-
+	stack_a = NULL;
 	ft_check_numbers(argc, argv);
-    if (argc >= 2)
-        stack_a = ft_create_stack(argv, argc, &stack_a);
-    else
-        return(0);
-    ft_check_duplicates(stack_a);
-    ft_lstiter(stack_a, ft_putnbr_copy);
-    
-    ft_lstclear(&stack_a, free);
-    system("leaks -q push_swap");
-    return 0;
+	if (argc >= 2)
+		stack_a = ft_create_stack(argv, argc, &stack_a);
+	else
+		return (0);
+	ft_check_duplicates(stack_a);
+	ft_lstclear(&stack_a, free);
+	system("leaks -q push_swap");
+	return (0);
 }
-
