@@ -17,7 +17,9 @@ void	ft_compare_to_overflow(char *splited, int *num)
 	char	*str;
 
 	splited = zero_handling(splited);
+	ft_printf("before itoa: %s\n", splited);
 	str = ft_itoa(*num);
+	ft_printf("%s\n", str);
 	if (ft_strncmp(splited, str, ft_strlen(splited)))
 	{
 		free(str);
@@ -85,6 +87,8 @@ char	*zero_handling(char *cadena)
 	int	i;
 
 	i = 0;
+	// if (cadena[i] == '\n') 
+	// 	return (&cadena[i + 1]);
 	if (cadena[i] == '-')
 		i++;
 	while (cadena[i] != '\0')

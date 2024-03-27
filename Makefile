@@ -4,7 +4,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = src/push_swap.c src/utils.c src/parse.c src/create_stack.c \
+SRC = src/main.c src/utils.c src/parse.c src/create_stack.c \
 		src/overflow.c
 
 OBJS = $(SRC:.c=.o)
