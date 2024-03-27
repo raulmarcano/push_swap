@@ -55,5 +55,6 @@ t_list	*ft_create_stack(char **argv, int count, t_list **stack_a)
 	i = 1;
 	while (i < count)
 		ft_add_to_stack(argv[i++], stack_a);
+	ft_check_duplicates(*stack_a);
 	return (*stack_a);
 }
