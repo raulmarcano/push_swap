@@ -46,13 +46,25 @@ int	main(int argc, char **argv)
 	t_list	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	ft_check_numbers(argc, argv);
 	if (argc >= 2)
 		stack_a = ft_create_stack(argv, argc, &stack_a);
 	else
 		return (0);
 	ft_lstiter(stack_a, ft_putnbr_copy);
+	ft_push(&stack_a, &stack_b, 'b');
+	ft_printf("Stack a:\n");
+	ft_lstiter(stack_a, ft_putnbr_copy);
+	ft_printf("Stack b:\n");
+	ft_lstiter(stack_b, ft_putnbr_copy);
+	ft_push(&stack_b, &stack_a, 'a');
+	ft_printf("Stack a:\n");
+	ft_lstiter(stack_a, ft_putnbr_copy);
+	ft_printf("Stack b:\n");
+	ft_lstiter(stack_b, ft_putnbr_copy);
 	ft_lstclear(&stack_a, free);
-	system("leaks -q push_swap");
+	ft_lstclear(&stack_b, free);
+	//system("leaks -q push_swap");
 	return (0);
 }
