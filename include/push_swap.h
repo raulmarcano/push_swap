@@ -16,6 +16,8 @@
 # include <stdlib.h>
 # include "../libft/libft.h"
 
+	//INPUT CHECKERS
+
 void	ft_check_numbers(int argc, char **argv);
 int		ft_many_numbers(char **array);
 void	ft_error(int error);
@@ -25,5 +27,10 @@ t_list	*ft_create_stack(char **argv, int count, t_list **stack_a);
 void	ft_check_duplicates(t_list *head);
 void	ft_compare_to_overflow(char *splitted, int *num);
 char	*zero_handling(char *cadena);
+
+	//MOVES
+
+void	ft_swap(t_list **stack, char st);
+void	ft_ss(t_list **stack_a, t_list **stack_b);
 
 #endif

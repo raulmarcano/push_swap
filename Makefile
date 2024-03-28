@@ -4,8 +4,8 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = src/main.c src/utils.c src/parse.c src/create_stack.c \
-		src/overflow.c
+SRC = src/main.c src/utils.c src/parse.c src/create_stack.c src/overflow.c \
+		src/moves/swap.c src/moves/rotate.c src/moves/push.c
 
 OBJS = $(SRC:.c=.o)
 
@@ -19,7 +19,7 @@ LIB_DIR = libft/
 all: $(NAME)
 
 $(NAME): $(OBJS) 
-	@make -s bonus -C $(LIB_DIR)
+	@make bonus -C $(LIB_DIR)
 	@$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) -o $(NAME)
 	
 clean:
