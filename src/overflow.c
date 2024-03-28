@@ -12,19 +12,6 @@
 
 #include "../include/push_swap.h"
 
-void	ft_compare_to_overflow(char *splited, int *num)
-{
-	char	*str;
-
-	splited = ft_zero_handling(splited);
-	str = ft_itoa(*num);
-	if (ft_strncmp(splited, str, ft_strlen(splited)))
-	{
-		free(str);
-		ft_error(4);
-	}
-	free(str);
-}
 
 char	*remove_zeros(char *cadena)
 {
@@ -80,7 +67,7 @@ char	*handle_negative(char *cadena)
 	return (cadena);
 }
 
-char	*ft_zero_handling(char *cadena)
+char	*zero_handling(char *cadena)
 {
 	int	i;
 
@@ -102,4 +89,18 @@ char	*ft_zero_handling(char *cadena)
 	remove_zeros(cadena);
 	handle_negative(cadena);
 	return (cadena);
+}
+
+void	ft_compare_to_overflow(char *splited, int *num)
+{
+	char	*str;
+
+	splited = zero_handling(splited);
+	str = ft_itoa(*num);
+	if (ft_strncmp(splited, str, ft_strlen(splited)))
+	{
+		free(str);
+		ft_error(4);
+	}
+	free(str);
 }
