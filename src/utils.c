@@ -29,15 +29,13 @@ void	ft_error(int error)
 
 void	ft_is_ordered(t_list **stack)
 {
-	t_list *current;
+	t_list	*current;
 
 	current = *stack;
-	while(current && current->next)
+	while (current && current->next)
 	{
-		if(*((int *)current->content) > *((int *)current->next->content))
-			{
-				return;
-			}
+		if (*((int *)current->content) > *((int *)current->next->content))
+			return ;
 		current = current->next;
 	}
 	ft_error(5);

@@ -12,7 +12,6 @@
 
 #include "../include/push_swap.h"
 
-
 char	*remove_zeros(char *cadena)
 {
 	int	i;

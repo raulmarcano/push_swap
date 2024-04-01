@@ -12,13 +12,13 @@
 
 #include "../../include/push_swap.h"
 
-void    ft_push(t_list **stack_from, t_list **stack_dst, char st_dst)
+void	ft_push(t_list **stack_from, t_list **stack_dst, char st_dst)
 {
-    t_list *aux;
+	t_list	*aux;
 
-    aux = *stack_from;
-    *stack_from = (*stack_from)->next;
-    aux->next = *stack_dst;
-    *stack_dst = aux;
-    ft_printf("%s%c\n", "p", st_dst);
+	aux = *stack_from;
+	*stack_from = (*stack_from)->next;
+	aux->next = *stack_dst;
+	*stack_dst = aux;
+	ft_printf("%s%c\n", "p", st_dst);
 }
