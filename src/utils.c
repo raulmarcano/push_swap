@@ -14,6 +14,8 @@
 
 void	ft_error(int error)
 {
+	if (error == -1)
+		ft_printf("ERROR\n");
 	if (error == 1)
 		ft_printf("ERROR\nDatos erroneos o no numéricos\n");
 	if (error == 2)
