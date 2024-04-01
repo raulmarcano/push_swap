@@ -22,5 +22,23 @@ void	ft_error(int error)
 		ft_printf("ERROR: Datos duplicados\n");
 	if (error == 4)
 		ft_printf("ERROR: Overflow\n");
+	if (error == 5)
+		ft_printf("ERROR: Esta ordenado\n");
 	exit(1);
+}
+
+void	ft_is_ordered(t_list **stack)
+{
+	t_list *current;
+
+	current = *stack;
+	while(current && current->next)
+	{
+		if(*((int *)current->content) > *((int *)current->next->content))
+			{
+				return;
+			}
+		current = current->next;
+	}
+	ft_error(5);
 }

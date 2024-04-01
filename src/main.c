@@ -53,16 +53,17 @@ int	main(int argc, char **argv)
 	else
 		return (0);
 	ft_lstiter(stack_a, ft_putnbr_copy);
-	ft_push(&stack_a, &stack_b, 'b');
-	ft_printf("Stack a:\n");
-	ft_lstiter(stack_a, ft_putnbr_copy);
-	ft_printf("Stack b:\n");
-	ft_lstiter(stack_b, ft_putnbr_copy);
-	ft_push(&stack_b, &stack_a, 'a');
-	ft_printf("Stack a:\n");
-	ft_lstiter(stack_a, ft_putnbr_copy);
-	ft_printf("Stack b:\n");
-	ft_lstiter(stack_b, ft_putnbr_copy);
+	ft_is_ordered(&stack_a);
+	// ft_push(&stack_a, &stack_b, 'b');
+	// ft_printf("Stack a:\n");
+	// ft_lstiter(stack_a, ft_putnbr_copy);
+	// ft_printf("Stack b:\n");
+	// ft_lstiter(stack_b, ft_putnbr_copy);
+	// ft_push(&stack_b, &stack_a, 'a');
+	// ft_printf("Stack a:\n");
+	// ft_lstiter(stack_a, ft_putnbr_copy);
+	// ft_printf("Stack b:\n");
+	// ft_lstiter(stack_b, ft_putnbr_copy);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 	//system("leaks -q push_swap");
