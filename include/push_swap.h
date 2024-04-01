@@ -36,10 +36,8 @@ void	ft_rotate(t_list **stack, char st);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 void	ft_rev_rotate(t_list **stack, char st);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
-void    ft_push(t_list **stack_from, t_list **stack_dst, char st_dst);
+void	ft_push(t_list **stack_from, t_list **stack_dst, char st_dst);
 
 	//SORT
-
-
-
+void	ft_sort_three(t_list **stack_a);
 #endif

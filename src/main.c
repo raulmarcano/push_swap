@@ -54,6 +54,8 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_lstiter(stack_a, ft_putnbr_copy);
 	ft_is_ordered(&stack_a);
+	ft_sort_three(&stack_a);
+	ft_lstiter(stack_a, ft_putnbr_copy);
 	// ft_push(&stack_a, &stack_b, 'b');
 	// ft_printf("Stack a:\n");
 	// ft_lstiter(stack_a, ft_putnbr_copy);
