@@ -18,7 +18,7 @@
 
 	//UTILS
 void	ft_error(int error);
-void	ft_is_ordered(t_list **stack);
+int		ft_is_ordered(t_list **stack);
 
 	//INPUT CHECKERS
 void	ft_check_numbers(int argc, char **argv);
@@ -40,4 +40,6 @@ void	ft_push(t_list **stack_from, t_list **stack_dst, char st_dst);
 
 	//SORT
 void	ft_sort_three(t_list **stack_a);
+void	ft_radix_sort(t_list **stack_a, t_list **stack_b);
+void	ft_sort_stacks(t_list **stack_a, t_list **stack_b);
 #endif

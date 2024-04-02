@@ -29,7 +29,7 @@ void	ft_error(int error)
 	exit(1);
 }
 
-void	ft_is_ordered(t_list **stack)
+int	ft_is_ordered(t_list **stack)
 {
 	t_list	*current;
 
@@ -37,24 +37,9 @@ void	ft_is_ordered(t_list **stack)
 	while (current && current->next)
 	{
 		if (*((int *)current->content) > *((int *)current->next->content))
-			return ;
+			return (0);
 		current = current->next;
 	}
-	ft_error(5);
+	return (1);
 }
 
-void	ft_sort_three(t_list **stack)
-{
-	t_list	*first;
-
-	first = *stack;
-	if (((*((int *)first->content)) > (*((int *)first->next->content)))
-		&& ((*((int *)first->content)) > *((int *)first->next->next->content)))
-		ft_rotate(stack, 'a');
-	else if (((*((int *)first->content)) < (*((int *)first->next->content)))
-		&& ((*((int *)first->content)) < *((int *)first->next->next->content)))
-		ft_rev_rotate(stack, 'a');
-	first = *stack;
-	if (*((int *)first->content) > *((int *)first->next->content))
-		ft_swap(stack, 'a');
-}
