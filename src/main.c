@@ -40,6 +40,18 @@ void	ft_putnbr_copy(void *integer)
 	return ;
 }
 
+void print_index_values(t_list *head)
+{
+	t_list *current;
+
+	current = head;
+	while (current)
+	{
+		ft_printf("%d\n", current->index);
+		current = current->next;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -53,8 +65,13 @@ int	main(int argc, char **argv)
 	else
 		return (0);
 	//ft_lstiter(stack_a, ft_putnbr_copy);
-	ft_sort_stacks(&stack_a, &stack_b);
-	//ft_lstiter(stack_a, ft_putnbr_copy);
+	//ft_sort_stacks(&stack_a, &stack_b);
+	ft_lstiter(stack_a, ft_putnbr_copy);
+
+	print_index_values(stack_a);
+	ft_get_index(&stack_a);
+	print_index_values(stack_a);
+	
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 	//system("leaks -q push_swap");
