@@ -47,7 +47,7 @@ void print_index_values(t_list *head)
 	current = head;
 	while (current)
 	{
-		ft_printf("%d\n", current->index);
+		ft_printf("%d\nnext\n", current->index);
 		current = current->next;
 	}
 }
@@ -67,9 +67,10 @@ int	main(int argc, char **argv)
 	//ft_lstiter(stack_a, ft_putnbr_copy);
 	//ft_sort_stacks(&stack_a, &stack_b);
 	ft_lstiter(stack_a, ft_putnbr_copy);
-
+	ft_zero_index(&stack_a);
 	print_index_values(stack_a);
-	ft_get_index(&stack_a);
+	//ft_get_index(&stack_a);
+	ft_printf("\n");
 	print_index_values(stack_a);
 	
 	ft_lstclear(&stack_a, free);

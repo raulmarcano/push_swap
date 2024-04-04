@@ -12,27 +12,29 @@
 
 #include "../include/push_swap.h"
 
-void	ft_zero_index(t_list **stack_a)
+void ft_zero_index(t_list **stack_a)
 {
-	while(*stack_a)
-	{
-		(*stack_a)->index = 0;
-		*stack_a = (*stack_a)->next;
-	}
+    while(*stack_a && (*stack_a)->next)
+    {
+        (*stack_a)->index = 0;
+        *stack_a = (*stack_a)->next;
+    }
+    // Handle the last node separately
+    if (*stack_a)
+    {
+        (*stack_a)->index = 0;
+    }
 }
 
-void	ft_get_index(t_list **stack_a)
-{
-	size_t size;
-	t_list *max_temp;
-	int		max_value;
-
-	max_value = 0;
-    size = ft_lstsize(*stack_a);
-    max_temp = *stack_a;
 
 
-}
+
+// void ft_get_index(t_list **stack)
+// {
+
+// }
+
+
 
 	//recorrer la lista para buscar el numero mayor y asignarle el size
 	//size = size -1
