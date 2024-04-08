@@ -28,23 +28,23 @@ void	ft_sort_three(t_list **stack)
 		ft_swap(stack, 'a');
 }
 
-
 void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 {
-	int digits;
+	int	digits;
+
 	(void)*stack_b;
 	digits = ft_lstsize(*stack_a);
-	if(!ft_is_ordered(stack_a))
+	if (!ft_is_ordered(stack_a))
 	{
 		if (digits == 2)
 			ft_swap(stack_a, 'a');
 		else if (digits == 3)
 			ft_sort_three(stack_a);
 		// else if (digits == 5)
-		// 	ft_sort_five(stack_a, stack_b);
+		// ft_sort_five(stack_a, stack_b);
 		else
 		{
-			ft_zero_index(stack_a);
+			ft_get_index(stack_a);
 		}
 	}
 }
