@@ -17,7 +17,7 @@ void	ft_free_splited(char **splited, int j)
 	while (j >= 0)
 		free(splited[j--]);
 	free(splited);
-	ft_error(1);
+	ft_print_error();
 }
 
 void	ft_add_to_stack(char *str, t_list **stack_a)

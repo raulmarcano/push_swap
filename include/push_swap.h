@@ -18,6 +18,7 @@
 
 	//UTILS
 void	ft_error(int error);
+void	ft_print_error(void);
 int		ft_is_ordered(t_list **stack);
 
 	//INPUT CHECKERS

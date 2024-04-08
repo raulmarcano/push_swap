@@ -18,6 +18,8 @@ void	ft_check_numbers(int argc, char **argv)
 	int	j;
 
 	i = 1;
+	if (argv[1][0] == '\0')
+		ft_print_error();
 	while (i < argc)
 	{
 		j = 0;
@@ -31,7 +33,7 @@ void	ft_check_numbers(int argc, char **argv)
 			&& ft_isdigit(argv[i][j + 1]) && ft_isspace(argv[i][j - 1]))))
 				j++;
 			else
-				ft_error(1);
+				ft_print_error();
 		}
 		i++;
 	}
@@ -55,7 +57,7 @@ void	ft_check_duplicates(t_list *stack_a)
 			if (current_value == compare_value)
 			{
 				ft_lstclear(&stack_a, free);
-				ft_error(3);
+				ft_print_error();
 			}
 			compare = compare->next;
 		}

@@ -29,6 +29,12 @@ void	ft_error(int error)
 	exit(1);
 }
 
+void	ft_print_error()
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
 int	ft_is_ordered(t_list **stack)
 {
 	t_list	*current;

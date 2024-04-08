@@ -99,7 +99,7 @@ void	ft_compare_to_overflow(char *splited, int *num)
 	if (ft_strncmp(splited, str, ft_strlen(splited)))
 	{
 		free(str);
-		ft_error(4);
+		ft_print_error();
 	}
 	free(str);
 }
