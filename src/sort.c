@@ -27,6 +27,19 @@ void	ft_sort_three(t_list **stack)
 	if (*((int *)first->content) > *((int *)first->next->content))
 		ft_swap(stack, 'a');
 }
+void	ft_sort_five(t_list **stack_a, t_list **stack_b, int digits)
+{
+	int half;
+	t_list temp;
+	temp = *stack_a;
+
+	half = digits/2;
+	while(temp)
+	{
+		if()
+	}
+	
+}
 
 void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 {
