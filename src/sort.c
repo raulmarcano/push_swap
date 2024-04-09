@@ -15,7 +15,7 @@
 void	ft_sort_three(t_list **stack)
 {
 	t_list	*first;
-	int 	a;
+	int		a;
 	int		b;
 	int		c;
 
@@ -41,17 +41,16 @@ void	ft_sort_three(t_list **stack)
 	}
 }
 
-
-void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+void	ft_five_aux(t_list **stack_a, t_list **stack_b, int index)
 {
-	t_list *temp;
-	int	i;
+	t_list	*temp;
+	int		i;
 
-	temp = *stack_a;
 	i = 0;
+	temp = *stack_a;
 	while (temp)
 	{
-		if (temp->index == 0)
+		if (temp->index == index)
 		{
 			if (i == 2)
 				ft_rotate(stack_a, 'a');
@@ -59,31 +58,25 @@ void	ft_sort_five(t_list **stack_a, t_list **stack_b)
 				ft_swap(stack_a, 'a');
 			if (i == 3)
 				ft_rev_rotate(stack_a, 'a');
-			if ((i == 4 || i == 3))
+			if ((i == 4 || i == 3) && index == 0)
 				ft_rev_rotate(stack_a, 'a');
 			ft_push(stack_a, stack_b, 'b');
-			break;
+			break ;
 		}
 		i++;
 		temp = temp->next;
 	}
-	i = 0;
-	temp = *stack_a;
-		while (temp)
+}
+
+void	ft_sort_five(t_list **stack_a, t_list **stack_b)
+{
+	int	index;
+
+	index = 0;
+	while (index <= 1)
 	{
-		if (temp->index == 1)
-		{
-			if (i == 2)
-				ft_rotate(stack_a, 'a');
-			if (i == 1 || i == 2)
-				ft_swap(stack_a, 'a');
-			if (i == 3)
-				ft_rev_rotate(stack_a, 'a');
-			ft_push(stack_a, stack_b, 'b');
-			break;
-		}
-		i++;
-		temp = temp->next;
+		ft_five_aux(stack_a, stack_b, index);
+		index++;
 	}
 	ft_sort_three(stack_a);
 	ft_push(stack_b, stack_a, 'a');
@@ -102,7 +95,7 @@ void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 		else if (digits == 3)
 			ft_sort_three(stack_a);
 		else if (digits == 5)
-		ft_sort_five(stack_a, stack_b);
+			ft_sort_five(stack_a, stack_b);
 		else
 		{
 			ft_get_index(stack_a);
