@@ -28,8 +28,8 @@ void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 			ft_sort_four(stack_a, stack_b);
 		else if (digits == 5)
 			ft_sort_five(stack_a, stack_b);
-		else
-		{
-		}
+		// else
+		// {
+		// }
 	}
 }
