@@ -65,12 +65,14 @@ int	main(int argc, char **argv)
 	else
 		return (0);
 	//ft_lstiter(stack_a, ft_putnbr_copy);
-	//ft_sort_stacks(&stack_a, &stack_b);
-	ft_lstiter(stack_a, ft_putnbr_copy);
-	ft_printf("\n");
+	//ft_lstiter(stack_a, ft_putnbr_copy);
+	// ft_printf("\n");
 	ft_get_index(&stack_a);
-	ft_printf("\n");
-	print_index_values(stack_a);
+	// ft_printf("\n");
+	// print_index_values(stack_a);
+	ft_sort_stacks(&stack_a, &stack_b);
+	// ft_lstiter(stack_a, ft_putnbr_copy);
+	//print_index_values(stack_a);
 	ft_lstclear(&stack_a, free);
 	ft_lstclear(&stack_b, free);
 	//system("leaks -q push_swap");
