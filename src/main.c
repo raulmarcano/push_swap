@@ -64,13 +64,14 @@ int	main(int argc, char **argv)
 		stack_a = ft_create_stack(argv, argc, &stack_a);
 	else
 		return (0);
-	//ft_lstiter(stack_a, ft_putnbr_copy);
-	// print_index_values(stack_a);
 	ft_sort_stacks(&stack_a, &stack_b);
-	// ft_lstiter(stack_a, ft_putnbr_copy);
+	print_index_values(stack_a);
+	ft_printf("Stack_a:\n");
+	ft_lstiter(stack_a, ft_putnbr_copy);
+	ft_printf("Stack_b:\n");
+	ft_lstiter(stack_b, ft_putnbr_copy);
 	//print_index_values(stack_a);
 	ft_lstclear(&stack_a, free);
-	ft_lstclear(&stack_b, free);
 	//system("leaks -q push_swap");
 	return (0);
 }

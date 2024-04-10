@@ -17,9 +17,9 @@ void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 	int	digits;
 
 	digits = ft_lstsize(*stack_a);
+	ft_get_index(stack_a);
 	if (!ft_is_ordered(stack_a))
 	{
-		ft_get_index(stack_a);
 		if (digits == 2)
 			ft_swap(stack_a, 'a');
 		else if (digits == 3)
@@ -28,8 +28,9 @@ void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 			ft_sort_four(stack_a, stack_b);
 		else if (digits == 5)
 			ft_sort_five(stack_a, stack_b);
-		// else
-		// {
-		// }
+		else
+		{
+			ft_great_sort(stack_a, stack_b);
+		}
 	}
 }

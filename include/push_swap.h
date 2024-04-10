@@ -44,6 +44,7 @@ void	ft_sort_three(t_list **stack_a);
 void	ft_sort_four(t_list **stack_a, t_list **stack_b);
 void	ft_sort_five(t_list **stack_a, t_list **stack_b);
 void	ft_sort_stacks(t_list **stack_a, t_list **stack_b);
+void	ft_great_sort(t_list **stack_a, t_list **stack_b);
 
 	//INDEX
 void	ft_get_index(t_list **stack_a);
