@@ -18,7 +18,7 @@ void	ft_check_numbers(int argc, char **argv)
 	int	j;
 
 	i = 1;
-	if (argv[1][0] == '\0')
+	if (argc == 2 && argv[1][0] == '\0')
 		ft_print_error();
 	while (i < argc)
 	{
