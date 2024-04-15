@@ -12,23 +12,6 @@
 
 #include "../include/push_swap.h"
 
-void	ft_error(int error)
-{
-	if (error == -1)
-		ft_printf("ERROR\n");
-	if (error == 1)
-		ft_printf("ERROR\nDatos erroneos o no numéricos\n");
-	if (error == 2)
-		ft_printf("ERROR\nNo hay datos\n");
-	if (error == 3)
-		ft_printf("ERROR\nDatos duplicados\n");
-	if (error == 4)
-		ft_printf("ERROR\nOverflow\n");
-	if (error == 5)
-		ft_printf("ERROR\nEsta ordenado\n");
-	exit(1);
-}
-
 void	ft_print_error(void)
 {
 	write (2, "Error\n", 6);

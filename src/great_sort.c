@@ -12,49 +12,68 @@
 
 #include "../include/push_swap.h"
 
-void	ft_push_remain(t_list **st_a, t_list **st_b, int size, int total_size)
+int	count_rot(t_list *stack, int max_indx)
 {
-	while (size > 3)
+	int	counter;
+
+	counter = 0;
+	while (stack && stack->index != max_indx)
 	{
-		if ((*st_a)->index == total_size
-			|| (*st_a)->index == total_size - 1
-			|| (*st_a)->index == total_size - 2)
-			ft_rotate(st_a, 'a');
-		else
-		{
-			ft_push(st_a, st_b, 'b');
-			size--;
-		}
+		stack = stack->next;
+		counter++;
 	}
+	return (counter);
 }
 
-void	ft_push_all(t_list **stack_a, t_list **stack_b)
+void	ft_bucket_sort(t_list **stack_a, t_list **stack_b, int digits)
 {
-	int	size;
-	int	total_size;
-	int	half;
+	int	i;
+	int	bucket_range;
 
-	total_size = ft_lstsize(*stack_a);
-	size = total_size;
-	if (size % 2 == 0)
-		half = size / 2;
-	else
-		half = (size / 2) + 1;
-	while (size >= 3 && size > half)
+	i = 0;
+	bucket_range = ft_sqrt(digits) * 7 / 5;
+	while (*stack_a)
 	{
-		if (((*stack_a)->index) < half)
+		if ((*stack_a)->index <= i)
 		{
 			ft_push(stack_a, stack_b, 'b');
-			size--;
+			if (ft_lstsize(*stack_b) > 1)
+				ft_rotate(stack_b, 'b');
+			i++;
+		}
+		else if ((*stack_a)->index <= i + bucket_range)
+		{
+			ft_push(stack_a, stack_b, 'b');
+			i++;
 		}
 		else
 			ft_rotate(stack_a, 'a');
 	}
-	ft_push_remain(stack_a, stack_b, size, total_size);
-	ft_sort_three(stack_a);
 }
 
-void	ft_great_sort(t_list **stack_a, t_list **stack_b)
+void	ft_great_sort(t_list **stack_a, t_list **stack_b, int digits)
 {
-	ft_push_all(stack_a, stack_b);
+	int	rotate_b_count;
+	int	rev_rot_b_count;
+
+	ft_bucket_sort(stack_a, stack_b, digits);
+	while (digits - 1 >= 0)
+	{
+		rotate_b_count = count_rot((*stack_b), (digits - 1));
+		rev_rot_b_count = digits - rotate_b_count;
+		if (rotate_b_count <= rev_rot_b_count)
+		{
+			while ((*stack_b)->index != digits - 1)
+				ft_rotate(stack_b, 'b');
+			ft_push(stack_b, stack_a, 'a');
+			digits--;
+		}
+		else
+		{
+			while ((*stack_b)->index != digits - 1)
+				ft_rev_rotate(stack_b, 'b');
+			ft_push(stack_b, stack_a, 'a');
+			digits--;
+		}
+	}
 }

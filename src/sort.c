@@ -29,8 +29,6 @@ void	ft_sort_stacks(t_list **stack_a, t_list **stack_b)
 		else if (digits == 5)
 			ft_sort_five(stack_a, stack_b);
 		else
-		{
-			ft_great_sort(stack_a, stack_b);
-		}
+			ft_great_sort(stack_a, stack_b, digits);
 	}
 }
