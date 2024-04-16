@@ -25,13 +25,13 @@ int	count_rot(t_list *stack, int max_indx)
 	return (counter);
 }
 
-void	ft_bucket_sort(t_list **stack_a, t_list **stack_b, int digits)
+void	ft_constant_sort(t_list **stack_a, t_list **stack_b, int digits)
 {
 	int	i;
-	int	bucket_range;
+	int	constant_range;
 
 	i = 0;
-	bucket_range = ft_sqrt(digits) * 7 / 5;
+	constant_range = ft_sqrt(digits) * 7 / 5;
 	while (*stack_a)
 	{
 		if ((*stack_a)->index <= i)
@@ -41,7 +41,7 @@ void	ft_bucket_sort(t_list **stack_a, t_list **stack_b, int digits)
 				ft_rotate(stack_b, 'b');
 			i++;
 		}
-		else if ((*stack_a)->index <= i + bucket_range)
+		else if ((*stack_a)->index <= i + constant_range)
 		{
 			ft_push(stack_a, stack_b, 'b');
 			i++;
@@ -56,7 +56,7 @@ void	ft_great_sort(t_list **stack_a, t_list **stack_b, int digits)
 	int	rotate_b_count;
 	int	rev_rot_b_count;
 
-	ft_bucket_sort(stack_a, stack_b, digits);
+	ft_constant_sort(stack_a, stack_b, digits);
 	while (digits - 1 >= 0)
 	{
 		rotate_b_count = count_rot((*stack_b), (digits - 1));
